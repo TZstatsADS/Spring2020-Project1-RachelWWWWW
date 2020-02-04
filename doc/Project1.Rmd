@@ -1,9 +1,10 @@
 ---
-title: "R Notebook"
+title: "Project1"
+author: "Rui Wang(rw2795)"
+date: "2/4/2020"
 output:
-  html_document:
-    df_print: paged
-runtime: shiny
+  pdf_document: default
+  html_document: default
 ---
 
 ### Step 0 - Install and load all the required libraries
@@ -241,6 +242,3 @@ By analyzing the lyrics for Rock and Hip-Hop, we could get the following results
  + Lyrics for Rock music conveys healthier information which talks about life with positive trustful words.
 
  + Lyrics for Hip-Hop music conveys kind of unhealthier information with negtive fearful words.
-
-
-
