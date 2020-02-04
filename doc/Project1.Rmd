@@ -171,6 +171,21 @@ shinyApp(ui, server)
 
 ### Step 5 - Data Analysis --- Sentiment Analsis
 
+```{r, eval=FALSE}
+###using get_nrc_sentiment to get emotion data
+memoise(get_nrc_sentiment)
+dt_rock_emo = dt_rock %>% 
+  mutate(emotions=map(stemmedwords,get_nrc_sentiment)) %>% 
+  unnest(emotions)
+save(dt_rock_emo, file="../output/dt_rock_emotions.RData")
+
+dt_hiphop_emo = dt_hiphop %>% 
+  mutate(emotions=map(stemmedwords,get_nrc_sentiment)) %>% 
+  unnest(emotions)
+save(dt_hiphop_emo, file="../output/dt_hiphop_emotions.RData")
+```
+
+
 ```{r warning=FALSE}
 load("../output/dt_rock_emotions.RData")
 load("../output/dt_hiphop_emotions.RData")
